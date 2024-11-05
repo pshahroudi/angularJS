@@ -16,3 +16,15 @@ app.controller('studentController', function ($scope) {
         { name: 'John C' }
     ];
 });
+
+
+app.controller('menuController', function ($scope, $http) {
+    $scope.showMenu = function (name) {
+        console.log("Showing Menu: " + name);
+    };
+
+    var url = "https://api.github.com/users/wesbos"
+    $http.get(url).then( function(response) { 
+        $scope.data = response.data; 
+     }); 
+});

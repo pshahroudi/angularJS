@@ -24,19 +24,20 @@
         {{xss}}
     </div>
 
-    <div class="w-25 row">
+    <div class="w-25 row" ng-controller="menuController">
         <div class="col">
-            <a href="" ng-click="showHome = !showHome; showAbout = false; showContactUs = false;"
+            <a href="" ng-click="showHome = !showHome; showAbout = false; showContactUs = false; showMenu('Home'); "
                 ng-init="showHome = true">Home</a> |
         </div>
         <div class="col">
-            <a href="" ng-click="showAbout = !showAbout; showHome = false; showContactUs = false;"
+            <a href="" ng-click="showAbout = !showAbout; showHome = false; showContactUs = false; showMenu('AboutUs');"
                 ng-init="showAbout = false">About</a> |
         </div>
         <div class="col">
-            <a href="" ng-click="showContactUs = !showContactUs; showHome = false; showAbout = false;"
+            <a href="" ng-click="showContactUs = !showContactUs; showHome = false; showAbout = false;  showMenu('ContactUs');"
                 ng-init="showContactUs = false">Contact US</a>
         </div>
+        {{data.avatar_url}}
     </div>
     <div class="check-element animate-show-hide" ng-show="showHome">
         Students are here
